@@ -1,3 +1,10 @@
-fbegoifhn
-bwkfgibfeklb
-eifgiogho
+for assess env file in command line windows uses
+
+Get-Content ../.env | ForEach-Object {
+    if ($_ -match '^\s*([^#][^=]*)=(.*)$') {
+        Set-Item -Path "Env:$($matches[1].Trim())" -Value $matches[2].Trim().Trim('"')
+    }
+}
+
+mac linux
+source .env
